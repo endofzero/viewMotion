@@ -84,7 +84,7 @@ foreach ($db->query($sql) as $row)
 //                $data.=" class='oddRow'";
   $data.="<td class='data_time_stamp'>" . substr($row['time_stamp'],11) . 
 "</td><td class='data_event_number'>" . $row['event_number']. 
-"</td><td class='image_link'><a href='#' data-target='" . substr($row['filename'],8)."'>JPG</a></td><td class='image_movie'><a href='#' data-target='" . substr($row['movie_filename'],8)."'>SWF</a></td><td class='data_changed_pixels'>" .$row['changed_pixels']. 
+"</td><td class='image_link'><a href='#' data-target='" . substr($row['filename'],8)."' data-event='".$row['event_number']."' >JPG</a></td><td class='image_movie'><a href='#' data-target='" . substr($row['movie_filename'],8)."'>SWF</a></td><td class='data_changed_pixels'>" .$row['changed_pixels']. 
 "</td><td class='data_motion_width'>" . $row['motion_width']. 
 "</td><td class='data_motion_height'>" . $row['motion_height']. 
 "</td><td class='data_motion_x'>" . $row['motion_x']. 

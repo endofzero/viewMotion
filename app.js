@@ -274,7 +274,7 @@ function drawCaptureMap(){
 //draw capture data onto layer, setting the active ID a different color and on top
 function drawSelection(){
         var capture_opacity_value = $("#custom-handle_opacity_capture_select").html();
-//      console.log("COV: " + capture_opacity_value);
+      console.log("COV: " + capture_opacity_value);
         var userChatColor ="rgba(255, 48, 48,"+ (capture_opacity_value/100)  +")";
         var startColor ="rgba(255,255,255,1)"
 //console.log(userChatColor);
@@ -284,7 +284,7 @@ function drawSelection(){
         selectionmapInstance.fillStyle = userChatColor;
         selectionmapInstance.clearRect(0, 0, 640, 480);
 
-//        console.log("drawCapMap " + activeID);
+        console.log("drawCapMap " + activeID);
 //      console.log(dataPacket);
 
         selectionmapInstance.globalCompositeOperation = "destination-over";
@@ -328,7 +328,8 @@ $.ajax({
     //Initialize JQuery to allow the clicking on the event_file column to push the image to the image_layer class.
     $( "#data_block > table > tbody > tr > td.image_link > a" ).click(function () {
        var url = $(this).attr('data-target');
-	activeID = $(this).html();
+	activeID = $(this).attr('data-event');
+	console.log("ActiveID: " + activeID);
 	//redraw the capture map, setting the 'key' image id for selection
 //	drawCaptureMap();
 	drawSelection();
